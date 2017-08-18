@@ -4,27 +4,29 @@
 		<title>New evaluation</title>
 		<link rel="stylesheet" type="text/css" href="new-evaluation.css">
 	</head>
-	<body style="background-color: #f7f7f7; margin: auto">
-		<header class="header">
-			<img id="logo" src="logo-v2.png">
-			<a style="vertical-align: middle; line-height: 70px" href="evaluations.html">Evaluations</a>
-			<a style="border-bottom: 9px solid #419fe2;vertical-align: middle; line-height: 70px; padding-bottom: 12px" href="new-evaluation.html">New Evaluation</a>
-			<a style="float: right; vertical-align: middle; line-height: 70px" href="login.html">Logout</a>
+	<body>
+		<header>
+			<img id="logo" src="assets/logo-v2.png">
+			<a href="evaluations.html">Evaluations</a>
+			<a class="current_page" href="new-evaluation.html".>New Evaluation</a>
+			<a href="login.html" style="float: right">Logout</a>
 		</header>
-			<div class="div_form">
-				<form method="post" action="">
-					<input class="input" type="text"  name="Candidate" placeholder="Candidate">
-					<input class="input" type="text" name="Interviewer" placeholder="Interviewer">
-					<input class="input" type="date" name="Date" value="04/22/2012">
+			<div class="evaluation_form">
+				<form method="post" action="action.php">
+					<div>
+						<input class="evaluation_form_header" type="text"  name="Candidate" placeholder="Candidate">
+						<input class="evaluation_form_header" type="text" name="Interviewer" placeholder="Interviewer">
+						<input class="evaluation_form_header" type="date" name="Date" value="04/22/2012">
+					</div>
 					<h2>Technical level</h2>
-					<table class="table">
-						<tr>
+					<table class="evaluation_form_table">
+						<tr class="evaluation_form_table_header">
 				            <th>Trainee</th>
 				            <th>Junior</th>
 				            <th>Middle</th>
 				            <th>Senior</th>
         				</tr>
-        				<tr class="tr">
+        				<tr class="evaluation_form_table_content">
             				<td>
 				            	<input type="radio" name="level" value="Trainee"></td>
 				            <td>
@@ -551,12 +553,9 @@
 						</li>
 						</ul>
 					</fieldset>
-					<br>
-					<button id="submit" type="submit">SUBMIT</button>
-					<br>
-					<br>
-					<br>
-					<div id="div_footer">Copyright@Softvision 2017</div>
+					<button class="evaluation_form_submit" type="submit">Submit</button>
+					<div style="clear: both"></div>
+					<footer>Copyright@Softvision 2017</footer>
 				</form>
 			</div>
 	</body>
