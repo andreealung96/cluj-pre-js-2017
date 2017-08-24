@@ -27,55 +27,172 @@ function CandidateDetailsForm (options = {}) {
     `;
 }
 
-function TechnicalLevelPicker (option = {}) {
+
+function TechnicalLevelPicker (options = {}) {
+    const tableHeader = options.headers.map(function(el){
+       return `<th>${el}</th>`;        
+    });
+    const headersEl = tableHeader.join("");
+    const tableData = options.columnData.map(function(el){
+        const inputEl = el.inputValues.map(function(el){
+            return `<input type="radio" name="level" value="${el}"/>`;
+        }).join("");
+        return `<td>${inputEl}</td>`;
+    });
     return `
-    <h2 class="evaluation_category">Technical level</h2>
-        <table class="evaluation_form_table">
-            <tr class="evaluation_form_table_header skin_evaluation_form_table_header">
-                <th>Trainee</th>
-                <th>Junior</th>
-                <th>Middle</th>
-                <th>Senior</th>
-            </tr>
-            <tr class="evaluation_form_table_content">
-                <td>
-                    <input type="radio" name="level" value="Trainee"></td>
-                <td>
-                    <input type="radio" name="level" value="Junior1">
-                    <input type="radio" name="level" value="Junior2">
-                    <input type="radio" name="level" value="Junior3">
-                </td>
-                   <td>
-                    <input type="radio" name="level" value="Middle1">
-                    <input type="radio" name="level" value="Middle2">
-                    <input type="radio" name="level" value="Middle3">
-                   </td>
-                    <td>
-                    <input type="radio" name="level" value="Senior1">
-                    <input type="radio" name="level" value="Senior2">
-                    <input type="radio" name="level" value="Senior3">
-                </td>
-            </tr>
-        </table>
+    <h2 class="evaluation_category">${options.title}</h2>
+    <table class="evaluation_form_table">
+        <tr class="evaluation_form_table_header skin_evaluation_form_table_header">
+            ${headersEl}
+        </tr>
+        <tr class="evaluation_form_table_content">
+            ${tableData.join("")}
+        </tr>
+    </table>
     `;
 }
 
 function Textarea (options = {}) {
+    const textareaEl = options.textarea.map(function(el){
+        return `
+        <h2 class="evaluation_category">${el.label}</h2>
+        <textarea class="evaluation_comments" rows="5" cols="132" placeholder="${el.placeholder}"></textarea>
+        `
+    }).join("");
     return `
-    <h2 class="evaluation_category">${options.label}</h2>
-    <textarea class="evaluation_comments" rows="5" cols="132" placeholder="${options.placeholder}"></textarea>
-    `;
+    <section>
+    ${textareaEl}
+    </section>
+    `;       
 }
 
-function NewEvaluationForm (option = {}) {
+function Fieldset (options = {}) {
+
+}
+
+function NewEvaluationForm (options = {}) {
+    const technical = getTechnicalLevel();
+
+    const textarea = 
+    {
+        textarea:
+        [
+            {
+                label:"Should the candidate be hired?",
+                placeholder: "The type of project that is suitable for the candidate&#13;&#10;Is guidance required for the candidate", 
+            },
+            {
+                label:"General Impression", 
+                placeholder: "*required", 
+            },
+            {
+                label: "Workflow, Leadership &amp; Softskills",
+                placeholder:  "Describe the environment in which the candidate works.&#13;&#10;Describe any guidance or management experience."
+            }
+        ]
+    }; 
+    
+    const fieldset = 
+    {
+        fieldset:
+        [
+            {
+                legend:"OOP, Design Patterns",
+                ul: [
+                    {
+                        label: "Classes"
+                        options: ["0", "1", "2", "3"]
+                    },
+                    {
+                        label: "Exception handling"
+                        options: ["0", "1", "2", "3"]
+                    },
+                    {
+                        label: "Version Control"
+                        options: ["0", "1", "2", "3"]
+                    },
+                    {
+                        label: "Access modifiers"
+                        options: ["0", "1", "2", "3"]
+                    },
+                    {
+                        label: "Design Patterns"
+                        options: ["0", "1", "2", "3"]
+                    },
+                    {
+                        label: "Issue Tracking"
+                        options: ["0", "1", "2", "3"]
+                    },
+                    {
+                        label: "Polymorphism"
+                        options: ["0", "1", "2", "3"]
+                    },
+                    {
+                        label: "RegEx"
+                        options: ["0", "1", "2", "3"]
+                    },
+                ]
+
+            },
+            {
+                legend:"HTTP",
+                ul: [
+                    {
+                        label: 
+                        options: []
+                    },
+                ]
+
+            },
+            {
+                legend:"HTML",
+                ul: [
+                    {
+                        label: 
+                        options: []
+                    },
+                ]
+
+            },
+            {
+                legend:"CSS",
+                ul: [
+                    {
+                        label: 
+                        options: []
+                    },
+                ]
+
+            },
+            {
+                legend:"Javascript",
+                ul: [
+                    {
+                        label: 
+                        options: []
+                    },
+                ]
+
+            },
+            {
+                legend:"NodeJS",
+                ul: [
+                    {
+                        label: 
+                        options: []
+                    },
+                ]
+
+            }
+        ]
+    }
+
     return `
     <div class="evaluation_form">
     <form method="post" action="action.php">
         ${CandidateDetailsForm()}
-        ${TechnicalLevelPicker()}
-        ${Textarea()}
-        ${Textarea()}
-        ${Textarea()}
+        ${TechnicalLevelPicker(technical)}
+        ${Textarea(textarea)}
         <fieldset class="evaluation_options">
             <legend class="evaluation_category">OOP, Design Patterns</legend>
             <ul>
