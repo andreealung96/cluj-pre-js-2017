@@ -1,15 +1,15 @@
-const LoginForm = function (options) {
-    return `
-    <div class="login skin_login">
-        <div class="login_header skin_login_header">Interview Feedback</div>
-        <form action="" method="post">
-            <input class="login_input" style="margin-top: 90px" type="text" name="username" placeholder="Username"><p>
-            <input class="login_input" style="margin-bottom: 45px" type="password" name="password" placeholder="Password"><p>
-            <button class="login_submit skin_login_submit" type="Submit">Login</button>
-        </form>
-    </div>
-    `;
-};
+// const LoginForm = function (options) {
+//     return `
+//     <div class="login skin-login rounded-border">
+//         <div class="login-header skin-login-header rounded-border text-center">Interview Feedback</div>
+//         <form action="" method="post">
+//             <input class="login-input skin-login-input login-input-1" type="text" name="username" placeholder="Username"><p>
+//             <input class="login-input skin-login-input login-input-2" type="password" name="password" placeholder="Password"><p>
+//             <button class="login-submit skin-login-submit rounded-border" type="Submit">Login</button>
+//         </form>
+//     </div>
+//     `;
+// };
 
 const LoginHeader = function (options) {
     return `
@@ -23,7 +23,7 @@ const LoginHeader = function (options) {
 const SubmitFeedbackSection = function (options) {
     return `
     <section class="section1">
-    <img id="img1" src="assets/new feedback.jpg">
+    <img class="img-section1" src="assets/new feedback.jpg">
     <h3 style="font-family: Arial" >Submit new feedback</h3>
     <p style="padding-top: 15px; font-family: Arial; font-size: 12px; vertical-align: middle">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra
@@ -41,8 +41,8 @@ const SubmitFeedbackSection = function (options) {
 
 const SubmitFeedbackResults = function (options) {
     return `
-    <section class="section2">
-    <img id="img2" src="assets/results.jpg">
+    <section class="section2 skin-section2">
+    <img class="img-section2" src="assets/results.jpg">
     <h3 style="font-family: Arial">View feedback results</h3>
     <p style="font-family: Arial; font-size: 12px">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra
@@ -58,13 +58,13 @@ const SubmitFeedbackResults = function (options) {
     `;
 };
 
-const Footer = function (options) {
-    return `
-    <footer class="skin_footer">
-    Copyright@Softvision2017
-    </footer>
-    `;
-}
+// const Footer = function (options) {
+//     return `
+//     <footer class="footer skin_footer">
+//     Copyright@Softvision2017
+//     </footer>
+//     `;
+// }
 
 const loginHTML = function () {
     return `
@@ -77,39 +77,10 @@ const loginHTML = function () {
 };
 
 window.onload = function() {
-    const body = document.querySelector("#app");
-    body.innerHTML = loginHTML();
-}
-
-
-
-
-
-
-/* const DropdownSelector = function (options){
-    const optionsEl = [];
-    for (let i=0; i< options.items.length; i++) {
-        optionsEl.push('<option>${options.items[i]}</option>');
-    }
-    return `
-        ${options.label}
-    <select>
-    ${optionsEl.join('')}
-    </select>
-    `
-}
-
-const sel = DropdownSelector(
-{
-    label: 'Classes',
-    items: ["0","1","2"]
-}
-)
-
-window.onload = function() {
     const divEl = document.querySelector("#app");
-    divEl.innerHTML = sel;
+    divEl.innerHTML = loginHTML();
 }
-*/
+
+
 
 

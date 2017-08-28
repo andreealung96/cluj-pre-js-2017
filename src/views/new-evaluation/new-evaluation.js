@@ -65,7 +65,8 @@ function Fieldset(options = {}) {
     const fieldsetEl = options.fieldset.map(el => `
         <fieldset class="evaluation_options">
             <legend class="evaluation_category">${el.legend}</legend>
-            ${FieldsetRow(el.ul[0])}
+            ${FieldsetRow(el.ul[0])} 
+            ${FieldsetRow(el.ul[1])}                               
         </fieldset>
         `).join('');
     return `
@@ -77,9 +78,8 @@ function Fieldset(options = {}) {
 
 function FieldsetRow(options = {}) {
     const row = options.row.map(el => {
-        const optionsHTML = el.options.map( (option) => 
+        const optionsHTML = el.options.map( option => 
             `<option>${option}</option>`).join('');
-
         return `<li>${el.label}</li>
          <li>
             <select>
@@ -88,10 +88,16 @@ function FieldsetRow(options = {}) {
          </li>
         `
     }).join('');
-
     return `<ul>
         ${row}
     </ul>`;
+}
+
+
+function SubmitButton(options = {}) {
+    return `
+    <button class="evaluation_form_submit skin_evaluation_form_submit" type="submit">Submit</button>
+    `
 }
 
 function NewEvaluationForm(options = {}) {
@@ -105,7 +111,7 @@ function NewEvaluationForm(options = {}) {
         ${TechnicalLevelPicker(technical)}
         ${Textarea(textarea)}
         ${Fieldset(fieldset)}
-        <button class="evaluation_form_submit skin_evaluation_form_submit" type="submit">Submit</button>
+        ${SubmitButton()}
         <div style="clear: both"></div> 
     </form>
     </div>
@@ -113,6 +119,6 @@ function NewEvaluationForm(options = {}) {
 }
 
 window.onload = function () {
-    const appEl = document.querySelector('#app');
+    const appEl = document.getElementById('app');
     appEl.innerHTML = NewEvaluationPage();
 };

@@ -2,49 +2,51 @@
 <html>
 	<head>
 		<title>Evaluations</title>
-		<link rel="stylesheet" type="text/css" href="evaluations.css">
+		<link rel="stylesheet/css" type="text/css" href="assets/css/normalize.css" />
+        <link rel="stylesheet/less" type="text/css" href="assets/css/evaluations.less">
+        <script src="less.js" type="text/javascript"></script>
 	</head>
-	<body>
-		<header>
-			<img class="logo" src="assets/logo-v2.png">
-			<a class="current_page" href="evaluations.html">Evaluations</a>
-			<a href="new-evaluation.html">New Evaluation</a>
-			<a style="float: right" href="login.html">Logout</a>
+	<body class="skin-body">
+		<header class="header skin-header">
+			<img class="logo" src="assets/logo-v2.png" alt="The image cannot be displayed">
+			<a class="nav-buttons current-page" href="evaluations.html">Evaluations</a>
+			<a class="nav-buttons" href="new-evaluation.html">New Evaluation</a>
+			<a class="nav-buttons" style="float: right" href="login.html">Logout</a>
 		</header>
 		<section>
-				<table class="candidates_table">
+				<table class="candidates-table">
 				<tr>
-					<th class="candidates_table_header">Nume</th>
-					<th class="candidates_table_header">Tehnologie</th>
-					<th colspan="2" class="candidates_table_header">Nivel</th>
+					<th class="candidates-table-header skin-candidates-table-header">Nume</th>
+					<th class="candidates-table-header skin-candidates-table-header">Tehnologie</th>
+					<th colspan="2" class="candidates-table-header skin-candidates-table-header">Nivel</th>
 				</tr>
 				<tr class="rows">
 					<td>Popescu Adrian</td>
 					<td>Javascript</td>
 					<td>Mid 2</td>
-					<td style="text-align: right">Detalii <button>+</button></td>
+					<td class=".details">Detalii <button class="details-button skin-details-button">+</button></td>
 				</tr>
 				<tr class="rows">
 					<td>Dragan Roxana</td>
 					<td>PHP</td>
 					<td>Mid 1</td>
-					<td style="text-align: right">Detalii <button>+</button></td>
+					<td class=".details">Detalii <button class="details-button skin-details-button">+</button></td>
 				</tr>
 				<tr class="rows">
 					<td>Florescu Mihai</td>
 					<td>Javascript</td>
 					<td>Junior 3</td>
-					<td style="text-align: right">Detalii <button>+</button></td>
+					<td class=".details">Detalii <button class="details-button skin-details-button">+</button></td>
 				</tr>
 				<tr class="rows">
 					<td>Gheorghe Andrei</td>
 					<td>Ruby</td>
 					<td>Senior 1</td>
-					<td style="text-align: right">Detalii <button>+</button></td>
+					<td class=".details">Detalii <button class="details-button skin-details-button">+</button></td>
 				</tr>
 				</table>
 		</section>
-		<footer>
+		<footer class="footer skin-footer">
 			Copyright@Softvision2017
 		</footer>
 	</body>
