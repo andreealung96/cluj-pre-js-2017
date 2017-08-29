@@ -1,32 +1,49 @@
 function NewEvaluationPage(options = {}) {
     return `
-    ${NAVNewEvaluations()}
+    ${NAVNewEvaluation()}
     ${NewEvaluationForm()} 
     ${Footer()} 
     `;
 }
 
-function NAVNewEvaluations(options = {}) {
+function NAVNewEvaluation(options = {}) {
     return `
-    <header class="header">
+    <header class="header skin-header">
         <img class="logo" src="assets/logo-v2.png">
-        <a class="menu_button" href="evaluations.html">Evaluations</a>
-        <a class="menu_button current_menu_button" href="new-evaluation.html">New Evaluation</a>
-        <a class="menu_button" href="login.html" style="float: right">Logout</a>
+        <a id="evaluationsPageRef" class="menu-button" href="evaluations.html">Evaluations</a>
+        <a class="menu-button current-menu-button skin-current-menu-button" href="new-evaluation.html">New Evaluation</a>
+        <a class="menu-button" href="login.html" style="float: right">Logout</a>
     </header>
+    `;
+}
+
+function NewEvaluationForm(options = {}) {
+    const technical = getTechnicalLevel();
+    const textarea = getTextarea();
+    const fieldset = getFieldset();
+    return `
+    <div class="evaluation-form">
+    <form method="post" action="action.php">
+        ${CandidateDetailsForm()}
+        ${TechnicalLevelPicker(technical)}
+        ${Textarea(textarea)}
+        ${Fieldset(fieldset)}
+        ${SubmitButton()}
+        <div style="clear: both"></div> 
+    </form>
+    </div>
     `;
 }
 
 function CandidateDetailsForm(options = {}) {
     return `
     <div>
-        <input class="evaluation_form_header" type="text"  name="Candidate" placeholder="Candidate">
-        <input class="evaluation_form_header" type="text" name="Interviewer" placeholder="Interviewer">
-        <input class="evaluation_form_header" type="date" name="Date" value="04/22/2012">
+        <input class="evaluation-form-header skin-evaluation-form-header" type="text"  name="Candidate" placeholder="Candidate">
+        <input class="evaluation-form-header skin-evaluation-form-header" type="text" name="Interviewer" placeholder="Interviewer">
+        <input class="evaluation-form-header skin-evaluation-form-header" type="date" name="Date" value="04/22/2012">
     </div>
     `;
 }
-
 
 function TechnicalLevelPicker(options = {}) {
     const tableHeader = options.headers.map(el => `<th>${el}</th>`);
@@ -36,12 +53,12 @@ function TechnicalLevelPicker(options = {}) {
         return `<td>${inputEl}</td>`;
     });
     return `
-    <h2 class="evaluation_category">${options.title}</h2>
-    <table class="evaluation_form_table">
-        <tr class="evaluation_form_table_header skin_evaluation_form_table_header">
+    <h2 class="evaluation-category">${options.title}</h2>
+    <table class="evaluation-form-table skin-evaluation-form-table">
+        <tr class="evaluation-form-table-header skin-evaluation-form-table-header">
             ${headersEl}
         </tr>
-        <tr class="evaluation_form_table_content">
+        <tr class="evaluation-form-table-content skin-evaluation-form-table-content">
             ${tableData.join('')}
         </tr>
     </table>
@@ -50,8 +67,8 @@ function TechnicalLevelPicker(options = {}) {
 
 function Textarea(options = {}) {
     const textareaEl = options.textarea.map(el => `
-        <h2 class="evaluation_category">${el.label}</h2>
-        <textarea class="evaluation_comments" rows="5" cols="132" placeholder="${el.placeholder}"></textarea>
+        <h2 class="evaluation-category">${el.label}</h2>
+        <textarea class="evaluation-comments" rows="5" cols="132" placeholder="${el.placeholder}"></textarea>
         `).join('');
     return `
     <section>
@@ -63,8 +80,8 @@ function Textarea(options = {}) {
 function Fieldset(options = {}) {
     const fieldset = getFieldset();
     const fieldsetEl = options.fieldset.map(el => `
-        <fieldset class="evaluation_options">
-            <legend class="evaluation_category">${el.legend}</legend>
+        <fieldset class="evaluation-options skin-evaluation-options">
+            <legend class="evaluation-category">${el.legend}</legend>
             ${FieldsetRow(el.ul[0])} 
             ${FieldsetRow(el.ul[1])}                               
         </fieldset>
@@ -96,26 +113,8 @@ function FieldsetRow(options = {}) {
 
 function SubmitButton(options = {}) {
     return `
-    <button class="evaluation_form_submit skin_evaluation_form_submit" type="submit">Submit</button>
+    <button class="evaluation-form-submit skin-evaluation-form-submit" type="submit">Submit</button>
     `
-}
-
-function NewEvaluationForm(options = {}) {
-    const technical = getTechnicalLevel();
-    const textarea = getTextarea();
-    const fieldset = getFieldset();
-    return `
-    <div class="evaluation_form">
-    <form method="post" action="action.php">
-        ${CandidateDetailsForm()}
-        ${TechnicalLevelPicker(technical)}
-        ${Textarea(textarea)}
-        ${Fieldset(fieldset)}
-        ${SubmitButton()}
-        <div style="clear: both"></div> 
-    </form>
-    </div>
-    `;
 }
 
 window.onload = function () {

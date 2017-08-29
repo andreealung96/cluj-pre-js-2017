@@ -1,14 +1,36 @@
 function EvaluationsPage(options = {}) { 
     const evaluationsTableData = getEvaluationsTableData();
     return `
-    ${NAV()}
+    ${NAVEvaluations()}
     ${EvaluationsTable(evaluationsTableData)}
     ${Footer()}
     `;
 }
 
+function NAVEvaluations(options = {}) {
+    return `
+    <header class="header skin-header">
+        <img class="logo" src="assets/logo-v2.png" alt="The image cannot be displayed">
+        <a id="evaluationsPage" class="nav-buttons current-page skin-current-page" href="evaluations.html">Evaluations</a>
+        <a id="newEvaluationPage" class="nav-buttons" href="new-evaluation.html">New Evaluation</a>
+        <a class="nav-buttons" style="float: right" href="login.html">Logout</a>
+    </header>
+    `
+}
+
+function EvaluationsTable(options = {}) {
+    return `
+    <section>
+        <table class="candidates-table skin-candidates-table">
+            ${EvaluationsTableHeader(options)}
+            ${EvaluationsTableBody(options)}
+        </table>
+    </section>
+    `;
+}
+
 function EvaluationsTableHeader(options = {}) {
-    const elements = options.map(el => `<th class="candidates-table-header skin-candidates-table-header">${el}</th>`).join('');
+    const elements = options.itemHeadings.map(el => `<th class="candidates-table-header skin-candidates-table-header">${el}</th>`).join('');
     return `
     <tr>
         ${elements}
@@ -16,19 +38,8 @@ function EvaluationsTableHeader(options = {}) {
     `;
 }
 
-function EvaluationsTableRow(options = {}) {
-    return `
-    <tr class="rows">
-        <td>${options.name}</td>
-        <td>${options.technology}</td>
-        <td>${options.level}</td>
-        <td class="details">Detalii <button class="details-button skin-details-button">+</button></td>
-    </tr>
-    `;
-}
-
 function EvaluationsTableBody(options = {}) {
-    const rowsElements = options.map(rowObj => EvaluationsTableRow(rowObj));
+    const rowsElements = options.items.map(rowObj => EvaluationsTableRow(rowObj));
     const rowsEl = rowsElements.join('');
     return `
     <tbody>    
@@ -37,14 +48,14 @@ function EvaluationsTableBody(options = {}) {
     `;
 }
 
-function EvaluationsTable(options = {}) {
+function EvaluationsTableRow(options = {}) {
     return `
-    <section>
-        <table class="candidates-table">
-            ${EvaluationsTableHeader(options.itemHeadings)}
-            ${EvaluationsTableBody(options.items)}
-        </table>
-    </section>
+    <tr class="rows skin-rows">
+        <td>${options.name}</td>
+        <td>${options.technology}</td>
+        <td>${options.level}</td>
+        <td class="details">Detalii <button class="details-button skin-details-button">+</button></td>
+    </tr>
     `;
 }
 
