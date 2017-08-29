@@ -1,34 +1,47 @@
 body {
     position: relative;
-    font-family: Arial;
-    background-color: #ffffff; 
+    font-family: Arial;    
     margin: auto;
 }
 
-header {
+.skin-body {
+    background-color: #ffffff; 
+}
+
+.header {
     height: 70px;
+}
+
+.skin-header {
     border-bottom: 1px solid grey;
 }
 
-footer {
+.footer {
     height: 60px; 
     position: absolute;
     left: 0;
     right: 0;
     line-height: 60px;
-    background-color: #bcbcaf;
-    color: #686865;
     text-align: right;
     padding-right: 50px;
-
 }
 
-a {
+.skin-footer {
+    background-color: #bcbcaf;
+    color: #686865;
+}
+
+.nav-buttons {
     vertical-align: middle;
     line-height: 70px;
     margin-left: 100px;
     margin-right: 15px;
     font-size: 25px;
+}
+
+.current-page {
+    border-bottom: 9px solid #21bcff; 
+    padding-bottom: 12px;
 }
 
 .logo {
@@ -38,7 +51,7 @@ a {
     vertical-align: middle;
 }
 
-.candidates_table {
+.candidates-table {
     margin: 200px auto 440px;
     width: 60%;
     height: 200px;
@@ -47,17 +60,15 @@ a {
     font-size: 20px;
 }
 
-.candidates_table_header {
-    background-color: #21bcff;
-    border: none;
+.candidates-table-header {
     height: 60px;
-    color: white;
     padding-left: 30px;
 }
 
-.current_page {
-    border-bottom: 9px solid #21bcff; 
-    padding-bottom: 12px;
+.skin-candidates-table-header {
+    background-color: #21bcff;
+    color: white;
+    border: none;
 }
 
 .rows {
@@ -65,27 +76,28 @@ a {
     height: 40px;
 }
 
-button {
-    border: none;
-    border-radius: 100%;
-    background-color: #21bcff;
-    color: white;
+.details-button {
     font-size: 20px;
     width: 30px;
     height: 30px;
+}
+
+.skin-details-button {
+    background-color: #21bcff;
+    color: white;
+    border: none;
+    border-radius: 100%;
 }
 
 td {
     padding-left: 30px;
 }
 
-
-a:link {
-    text-decoration: none;
-    color: black;
+.details {
+    text-align: right;
 }
 
-a:visited {
+a:link, a:visited {
     text-decoration: none;
     color: black;
 }

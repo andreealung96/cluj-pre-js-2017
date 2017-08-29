@@ -1,3 +1,34 @@
+function getEvaluationsTableData() {
+    return {
+        itemHeadings:
+        [
+            'Nume', 'Tehnologie', 'Nivel',''
+        ],
+        items:
+        [
+            {
+                name: 'Popescu Adrian',
+                technology: 'Javascript',
+                level: 'Mid 2',
+            },
+            {
+                name: 'Dragan Roxana',
+                technology: 'PHP',
+                level: 'Mid 1',
+            },
+            {
+                name: 'Florescu Mihai',
+                technology: 'Javascript',
+                level: 'Junior 3',
+            },
+            {
+                name: 'Gheorghe Andrei',
+                technology: 'Ruby',
+                level: 'Senior 1',
+            },
+        ]
+    }
+}
 
 function getTechnicalLevel () {
     return  {
@@ -104,6 +135,7 @@ function getTextarea () {
                 {
                     legend:"HTTP",
                     ul: [
+                        { row: [
                         {
                             label: "Protocol",
                             options: ["0", "1", "2", "3"]
@@ -116,8 +148,8 @@ function getTextarea () {
                             label: "REST",
                             options: ["0", "1", "2", "3"]
                         }
-                    ],
-                    ul: [
+                        ]},
+                    { row: [
                         {
                             label: "HEADERS",
                             options: ["0", "1", "2", "3"]
@@ -130,11 +162,11 @@ function getTextarea () {
                             label: "Sessions &amp; Cookies",
                             options: ["0", "1", "2", "3"]
                         }
-                    ]
+                    ]}]
                 },
                 {
                     legend:"HTML",
-                    ul: [
+                    ul: [{row: [
                         {
                             label: "Doctype",
                             options: ["0", "1", "2", "3"]
@@ -147,8 +179,8 @@ function getTextarea () {
                             label: "Basic SEO",
                             options: ["0", "1", "2", "3"]
                         }
-                    ],
-                    ul: [
+                    ]},
+                    {row: [
                         {
                             label: "Syntax rules",
                             options: ["0", "1", "2", "3"]
@@ -157,11 +189,11 @@ function getTextarea () {
                             label: "Attributes",
                             options: ["0", "1", "2", "3"]
                         }
-                    ]
+                    ]}]
                 },
                 {
                     legend:"CSS",
-                    ul: [
+                    ul: [{row: [
                         {
                             label: "Usage",
                             options: ["0", "1", "2", "3"]
@@ -174,8 +206,8 @@ function getTextarea () {
                             label: "CSS 3.0",
                             options: ["0", "1", "2", "3"]
                         }
-                    ],
-                    ul: [
+                    ]},
+                    {row: [
                         {
                             label: "Selectors",
                             options: ["0", "1", "2", "3"]
@@ -188,11 +220,11 @@ function getTextarea () {
                             label: "Dynamic Stylesheets",
                             options: ["0", "1", "2", "3"]
                         }
-                    ]
+                    ]}]
                 },
                 {
                     legend:"Javascript",
-                    ul: [
+                    ul: [{row: [
                         {
                             label: "Data types &amp; variables",
                             options: ["0", "1", "2", "3"]
@@ -205,8 +237,8 @@ function getTextarea () {
                             label: "DOM Manipulation",
                             options: ["0", "1", "2", "3"]
                         }
-                    ],
-                    ul: [
+                    ]},
+                    {row: [
                         {
                             label: "Functions",
                             options: ["0", "1", "2", "3"]
@@ -219,8 +251,8 @@ function getTextarea () {
                             label: "Event Handling",
                             options: ["0", "1", "2", "3"]
                         }
-                    ],
-                    ul: [
+                    ]},
+                    {row: [
                         {
                             label: "Prototype &amp; OOP",
                             options: ["0", "1", "2", "3"]
@@ -233,8 +265,8 @@ function getTextarea () {
                             label: "AJAX",
                             options: ["0", "1", "2", "3"]
                         }
-                    ],
-                    ul: [
+                    ]},
+                    {row: [
                         {
                             label: "Debugging",
                             options: ["0", "1", "2", "3"]
@@ -247,8 +279,8 @@ function getTextarea () {
                             label: "Tooling",
                             options: ["0", "1", "2", "3"]
                         }
-                    ],
-                    ul: [
+                    ]},
+                    {row: [
                         {
                             label: "Libraries",
                             options: ["0", "1", "2", "3"]
@@ -261,17 +293,17 @@ function getTextarea () {
                             label: "Browser Engines",
                             options: ["0", "1", "2", "3"]
                         }
-                    ],
-                    ul: [
+                    ]},
+                    {row: [
                         {
                             label: "Frameworks",
                             options: ["0", "1", "2", "3"]
                         }
-                    ]
+                    ]}]
                 },
                 {
                     legend:"NodeJS",
-                    ul: [
+                    ul: [{row: [
                         {
                             label: "Backend frameworks",
                             options: ["0", "1", "2", "3"]
@@ -284,13 +316,13 @@ function getTextarea () {
                             label: "DOM Manipulation",
                             options: ["0", "1", "2", "3"]
                         }
-                    ],
-                    ul: [
+                    ]},
+                    {row: [
                         {
                             label: "Unit Testing",
                             options: ["0", "1", "2", "3"]
                         }
-                    ]
+                    ]}]
                 }
             ]
         }
