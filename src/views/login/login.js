@@ -1,5 +1,5 @@
 function LoginPage () {
-    return `
+    this.markup = `
     ${LoginHeader()}
     ${SubmitFeedbackSection()}
     ${SubmitFeedbackResults()}
@@ -20,7 +20,7 @@ const LoginForm = function () {
     return `
     <div class="login skin-login rounded-border">
         <div class="login-header skin-login-header rounded-border text-center">Interview Feedback</div>
-        <form action="" method="post">
+        <form id="loginForm" action="" method="post">
             <input class="login-input skin-login-input login-input-1" type="text" name="username" placeholder="Username"><p>
             <input class="login-input skin-login-input login-input-2" type="password" name="password" placeholder="Password"><p>
             <button id="login-button" class="login-submit skin-login-submit rounded-border" type="Submit">Login</button>
@@ -67,10 +67,10 @@ const SubmitFeedbackResults = function () {
     `;
 };
 
-window.onload = function() {
-    const divEl = document.getElementById("app");
-    divEl.innerHTML = LoginPage();
-}
+// window.onload = function() {
+//     const divEl = document.getElementById("app");
+//     divEl.innerHTML = LoginPage();
+// }
 
 
 
