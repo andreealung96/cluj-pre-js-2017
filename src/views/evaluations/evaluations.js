@@ -1,6 +1,6 @@
 function EvaluationsPage(options = {}) { 
     const evaluationsTableData = getEvaluationsTableData();
-    return `
+    this.markup = `
     ${NAVEvaluations()}
     ${EvaluationsTable(evaluationsTableData)}
     ${Footer()}
@@ -11,9 +11,9 @@ function NAVEvaluations(options = {}) {
     return `
     <header class="header skin-header">
         <img class="logo" src="assets/logo-v2.png" alt="The image cannot be displayed">
-        <a id="evaluationsPage" class="nav-buttons current-page skin-current-page" href="evaluations.html">Evaluations</a>
-        <a id="newEvaluationPage" class="nav-buttons" href="new-evaluation.html">New Evaluation</a>
-        <a class="nav-buttons" style="float: right" href="login.html">Logout</a>
+        <a id="evaluationsPage" class="nav-buttons current-page skin-current-page">Evaluations</a>
+        <a id="newEvaluationPage" class="nav-buttons">New Evaluation</a>
+        <a id="logout" class="nav-buttons" style="float: right">Logout</a>
     </header>
     `
 }
@@ -59,7 +59,7 @@ function EvaluationsTableRow(options = {}) {
     `;
 }
 
-window.onload = function () {
-    const appEl = document.getElementById('app');
-    appEl.innerHTML = EvaluationsPage();
-};
+// window.onload = function () {
+//     const appEl = document.getElementById('app');
+//     appEl.innerHTML = EvaluationsPage();
+// };

@@ -10,9 +10,9 @@ function NAVNewEvaluation(options = {}) {
     return `
     <header class="header skin-header">
         <img class="logo" src="assets/logo-v2.png">
-        <a id="evaluationsPageRef" class="menu-button" href="evaluations.html">Evaluations</a>
-        <a class="menu-button current-menu-button skin-current-menu-button" href="new-evaluation.html">New Evaluation</a>
-        <a class="menu-button" href="login.html" style="float: right">Logout</a>
+        <a id="evaluationsPageRef" class="menu-button">Evaluations</a>
+        <a id="newEvaluationPage"class="menu-button current-menu-button skin-current-menu-button">New Evaluation</a>
+        <a class="menu-button" style="float: right">Logout</a>
     </header>
     `;
 }
@@ -23,7 +23,7 @@ function NewEvaluationForm(options = {}) {
     const fieldset = getFieldset();
     return `
     <div class="evaluation-form">
-    <form method="post" action="action.php">
+    <form id="newEvaluationForm" method="post" action="">
         ${CandidateDetailsForm()}
         ${TechnicalLevelPicker(technical)}
         ${Textarea(textarea)}
@@ -38,9 +38,9 @@ function NewEvaluationForm(options = {}) {
 function CandidateDetailsForm(options = {}) {
     return `
     <div>
-        <input class="evaluation-form-header skin-evaluation-form-header" type="text"  name="Candidate" placeholder="Candidate">
-        <input class="evaluation-form-header skin-evaluation-form-header" type="text" name="Interviewer" placeholder="Interviewer">
-        <input class="evaluation-form-header skin-evaluation-form-header" type="date" name="Date" value="04/22/2012">
+        <input id="candidate" class="evaluation-form-header skin-evaluation-form-header" type="text" name="Candidate" placeholder="Candidate">
+        <input id="interviewer" class="evaluation-form-header skin-evaluation-form-header" type="text" name="Interviewer" placeholder="Interviewer">
+        <input id="date" class="evaluation-form-header skin-evaluation-form-header" type="date" name="Date" value="04/22/2012">
     </div>
     `;
 }
@@ -113,11 +113,11 @@ function FieldsetRow(options = {}) {
 
 function SubmitButton(options = {}) {
     return `
-    <button class="evaluation-form-submit skin-evaluation-form-submit" type="submit">Submit</button>
+    <button id="submit" class="evaluation-form-submit skin-evaluation-form-submit" type="submit">Submit</button>
     `
 }
 
-window.onload = function () {
-    const appEl = document.getElementById('app');
-    appEl.innerHTML = NewEvaluationPage();
-};
+// window.onload = function () {
+//     const appEl = document.getElementById('app');
+//     appEl.innerHTML = NewEvaluationPage();
+// };
