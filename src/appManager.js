@@ -6,8 +6,15 @@ PageCreator.prototype.app = function(options) {
             view: new LoginPage(),
             events: new LoginEvents()
         }
-    return {
-        view: new EvaluationsPage(),
-        events: new EvaluationsEvents()
-    }
+    if(options.isOnEv === true)
+        return {
+            view: new NewEvaluationPage(),
+            events: new NewEvaluationEvents()
+        }  
+    if(options.isLogged === true)
+        return {
+            view: new EvaluationsPage(),
+            events: new EvaluationsEvents()
+        };     
 };
+

@@ -1,5 +1,6 @@
 const LoginEvents = function () {
     this.initEvents = function(buildPage) {
+        
         const loginForm = document.getElementById("loginForm");
         loginForm.addEventListener("submit", function(event){
             event.preventDefault();
@@ -9,7 +10,7 @@ const LoginEvents = function () {
                     userData[item.name] = item.value
                 }
             });
-            window.dataStorage.set('userData', userData);
+            window.dataStorage.set('userData', userData);   
             buildPage();
         });
     }

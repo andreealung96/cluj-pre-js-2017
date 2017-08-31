@@ -1,5 +1,5 @@
 function NewEvaluationPage(options = {}) {
-    return `
+    this.markup = `
     ${NAVNewEvaluation()}
     ${NewEvaluationForm()} 
     ${Footer()} 
@@ -12,7 +12,7 @@ function NAVNewEvaluation(options = {}) {
         <img class="logo" src="assets/logo-v2.png">
         <a id="evaluationsPageRef" class="menu-button">Evaluations</a>
         <a id="newEvaluationPage"class="menu-button current-menu-button skin-current-menu-button">New Evaluation</a>
-        <a class="menu-button" style="float: right">Logout</a>
+        <a id="logout" class="menu-button" style="float: right">Logout</a>
     </header>
     `;
 }

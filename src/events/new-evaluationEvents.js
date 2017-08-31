@@ -1,18 +1,24 @@
-const newEvaluationEvents = function () {
-    this.initEvents = function() {
+const NewEvaluationEvents = function () {
+    this.initEvents = function(buildPage) {
+        
         const currentPageButton = document.getElementById("newEvaluationPage");
         currentPageButton.addEventListener("click", function(event) {
-            event.preventDefault();
+            event.preventDefault();            
         });
-        const switchPage = document.getElementById("evaluationsPageRef");
-        
-        //not finished yet
-        
-        switchPage.addEventListener("click", function() {
-            return {
-                view: new EvaluationsPage(),
-                events: new EvaluationsEvents()
-            }
+
+        const logoutButton = document.getElementById("logout");
+        logoutButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            window.dataStorage.remove("userData");
+            page = "login"; //page = "login" -> for displaying login page
+            buildPage();
+        }); 
+
+        const prevPageButton = document.getElementById("evaluationsPageRef");
+        prevPageButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            page = "prev"; //page = "prev" -> for switching to prev page (EvPage)
+            buildPage();
         });
     }
 }
