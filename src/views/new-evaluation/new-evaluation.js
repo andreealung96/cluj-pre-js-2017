@@ -1,5 +1,5 @@
 function NewEvaluationPage(options = {}) {
-    return `
+    this.markup = `
     ${NAVNewEvaluation()}
     ${NewEvaluationForm()} 
     ${Footer()} 
@@ -12,7 +12,7 @@ function NAVNewEvaluation(options = {}) {
         <img class="logo" src="assets/logo-v2.png">
         <a id="evaluationsPageRef" class="menu-button">Evaluations</a>
         <a id="newEvaluationPage"class="menu-button current-menu-button skin-current-menu-button">New Evaluation</a>
-        <a class="menu-button" style="float: right">Logout</a>
+        <a id="logout" class="menu-button" style="float: right">Logout</a>
     </header>
     `;
 }
@@ -49,7 +49,7 @@ function TechnicalLevelPicker(options = {}) {
     const tableHeader = options.headers.map(el => `<th>${el}</th>`);
     const headersEl = tableHeader.join('');
     const tableData = options.columnData.map((el) => {
-        const inputEl = el.inputValues.map(el => `<input type="radio" name="level" value="${el}"/>`).join('');
+        const inputEl = el.inputValues.map(el => `<input class="radioButtons" type="radio" name="level" value="${el}"/>`).join('');
         return `<td>${inputEl}</td>`;
     });
     return `
@@ -99,7 +99,7 @@ function FieldsetRow(options = {}) {
             `<option>${option}</option>`).join('');
         return `<li>${el.label}</li>
          <li>
-            <select>
+            <select class="evaluation-select">
                  ${optionsHTML}
             </select>
          </li>
