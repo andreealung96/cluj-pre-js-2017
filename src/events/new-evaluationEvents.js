@@ -20,5 +20,15 @@ const NewEvaluationEvents = function () {
             page = "prev"; //page = "prev" -> for switching to prev page (EvPage)
             buildPage();
         });
+
+        const submitButton = document.getElementById("submit");
+        submitButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            getFormData();            
+        });
     }
 }
+
+
+
+        

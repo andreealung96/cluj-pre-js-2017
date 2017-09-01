@@ -39,9 +39,12 @@ body {
     font-size: 25px;
 }
 
-.current-page {
-    border-bottom: 9px solid #21bcff; 
+.current-page {    
     padding-bottom: 12px;
+}
+
+.skin-current-page {
+    border-bottom: 9px solid #21bcff; 
 }
 
 .logo {
@@ -54,10 +57,13 @@ body {
 .candidates-table {
     margin: 200px auto 440px;
     width: 60%;
-    height: 200px;
-    border-collapse: collapse;
+    height: 200px;   
     text-align: left;
     font-size: 20px;
+}
+
+.skin-candidates-table {
+    border-collapse: collapse;
 }
 
 .candidates-table-header {
@@ -71,9 +77,12 @@ body {
     border: none;
 }
 
-.rows {
-    border-bottom: 1px solid #686865;
+.rows { 
     height: 40px;
+}
+
+.skin-rows {
+    border-bottom: 1px solid #686865;
 }
 
 .details-button {
@@ -100,4 +109,40 @@ td {
 a:link, a:visited {
     text-decoration: none;
     color: black;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }

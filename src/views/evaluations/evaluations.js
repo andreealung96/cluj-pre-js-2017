@@ -3,6 +3,7 @@ function EvaluationsPage(options = {}) {
     this.markup = `
     ${NAVEvaluations()}
     ${EvaluationsTable(evaluationsTableData)}
+    ${Modal()}
     ${Footer()}
     `;
 }
@@ -54,9 +55,20 @@ function EvaluationsTableRow(options = {}) {
         <td>${options.name}</td>
         <td>${options.technology}</td>
         <td>${options.level}</td>
-        <td class="details">Detalii <button class="details-button skin-details-button">+</button></td>
+        <td class="details">Detalii <button id="details" class="details-button skin-details-button">+</button></td>
     </tr>
     `;
+}
+
+function Modal() {
+    return `
+    <div id="modal" class="modal">
+        <div class="modal-content>
+            <span class="close">&times;</span>
+            <p>Detalii aisdfjoaifjqaeigeig</p>
+        </div>
+    </div>
+    `
 }
 
 // window.onload = function () {

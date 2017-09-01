@@ -38,9 +38,9 @@ function NewEvaluationForm(options = {}) {
 function CandidateDetailsForm(options = {}) {
     return `
     <div>
-        <input id="candidate" class="evaluation-form-header skin-evaluation-form-header" type="text" name="Candidate" placeholder="Candidate">
-        <input id="interviewer" class="evaluation-form-header skin-evaluation-form-header" type="text" name="Interviewer" placeholder="Interviewer">
-        <input id="date" class="evaluation-form-header skin-evaluation-form-header" type="date" name="Date" value="04/22/2012">
+        <input class="evaluation-form-header skin-evaluation-form-header" type="text" name="Candidate" placeholder="Candidate">
+        <input class="evaluation-form-header skin-evaluation-form-header" type="text" name="Interviewer" placeholder="Interviewer">
+        <input class="evaluation-form-header skin-evaluation-form-header" type="date" name="Date" value="04/22/2012">
     </div>
     `;
 }
@@ -68,7 +68,7 @@ function TechnicalLevelPicker(options = {}) {
 function Textarea(options = {}) {
     const textareaEl = options.textarea.map(el => `
         <h2 class="evaluation-category">${el.label}</h2>
-        <textarea class="evaluation-comments" rows="5" cols="132" placeholder="${el.placeholder}"></textarea>
+        <textarea class="evaluation-comments"  name="textarea" rows="5" cols="132" placeholder="${el.placeholder}"></textarea>
         `).join('');
     return `
     <section>
@@ -99,7 +99,7 @@ function FieldsetRow(options = {}) {
             `<option>${option}</option>`).join('');
         return `<li>${el.label}</li>
          <li>
-            <select class="evaluation-select">
+            <select class="evaluation-select" name="dropdown-selector">
                  ${optionsHTML}
             </select>
          </li>
