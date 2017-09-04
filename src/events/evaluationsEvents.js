@@ -21,13 +21,21 @@ const EvaluationsEvents = function () {
             buildPage();
         });
 
-        const detailsButton = document.getElementById("details");
-        detailsButton.addEventListener("click", function() {
-            const modal = document.getElementById("modal");
-            modal.style.display = "block";
+        const detailsButton = document.getElementsByClassName("details-button");
+        for(let i=0; i<detailsButton.length; i++) {
+            detailsButton[i].addEventListener("click", function() {
+                const modal = document.getElementById("modal");
+                modal.style.display = "block";
+                const closeButton = document.getElementsByClassName("close");
+                const close = closeButton[0];
+                close.addEventListener("click", function() {
+                    modal.style.display = "none";
+                });
         });
+        };            
 
         window.onclick = function(event) {
+            const modal = document.getElementById("modal");
             if (event.target == modal) {
                 modal.style.display = "none";
             }

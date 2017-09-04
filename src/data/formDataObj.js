@@ -59,7 +59,6 @@ function getFormData() {
         localStorage.setItem("evaluationsData", JSON.stringify(arr));
         console.log(arr);
         }
-    
 }  
 
 
