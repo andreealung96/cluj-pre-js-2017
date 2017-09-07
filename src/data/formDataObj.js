@@ -1,40 +1,69 @@
-const submitButton = document.getElementById("submit");
-submitButton.addEventListener("click", function (event) {
-    event.preventDefault();
+function getFormData() {
 
-    function dataObj (candidate, interviewer, date, level, comments, evaluation) {
-        this.candidate = candidate;
-        this.interviewer = interviewer;
-        this.date = date;
-        this.level = level;
-        this.comments = comments;
-        this.evaluation = evaluation;
+    const candidateInfo = document.querySelectorAll(".evaluation-form-header");
+    const candidateInfoArr = [];
+    const techLevel = document.querySelectorAll(".radioButtons");
+    const techLevelArr = [];
+    const comments = document.querySelectorAll(".evaluation-comments");
+    const commentsArr = [];
+    const evaluation = document.querySelectorAll(".evaluation-select");
+    const evaluationArr = [];
+    
+    candidateInfo.forEach(function(el) {
+        candidateInfoArr.push({
+            name: el.name,
+            value: el.value
+        })
+    });
+
+    techLevel.forEach(function(el) {
+        if(el.checked) {
+            techLevelArr.push({
+                name: el.name,
+                value: el.value
+            })
+        }
+    });
+
+    comments.forEach(function(el) {
+        commentsArr.push({
+            name: el.name,
+            value: el.value
+        })
+    });
+
+    evaluation.forEach(function(el) {
+        evaluationArr.push({
+            name: el.name,
+            value: el.value
+        })
+    });
+
+    const formDataObj = {
+        candidateInfo: candidateInfoArr,
+        techLevel: techLevelArr,
+        comments:commentsArr,
+        evaluation: evaluationArr
     }
 
-    const candidate = document.getElementById("candidate");
-    const interviewer = document.getElementById("interviewer");
-    const date = document.getElementById("date");
+    var storedObj = localStorage.getItem("evaluationsData");
+    if (JSON.parse(storedObj) === null) {
+        let arr = [];
+        arr.push(formDataObj);
+        localStorage.setItem("evaluationsData", JSON.stringify(arr));
+        console.log(arr);
+    }
+    else {
+        let arr = JSON.parse(storedObj);
+        arr.push(formDataObj);
+        localStorage.setItem("evaluationsData", JSON.stringify(arr));
+        console.log(arr);
+        }
+    
+}  
 
-    const level = document.getElementsByClassName("radioButtons");
 
-    const levelArr = [];
-    level.forEach(function(el) {
-        levelArr.push(el.value);
-    });
 
-    const comments = document.getElementsByClassName("evaluation-comments");
+    
 
-    const commentsArr = [];
-    comments.forEach(function(el) {
-        commentsArr.push(el.value);
-    });
 
-    const evaluation = document.getElementsByClassName("evaluation-select");
-
-    const evaluationArr = [];
-    evaluation.forEach(function(el) {
-        evaluationArr.push(el.value);
-    });
-
-    const newObj = new dataObj(candidate, interviewer, date, levelArr, commentsArr, evaluationArr);
-})
