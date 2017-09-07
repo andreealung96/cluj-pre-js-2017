@@ -1,6 +1,7 @@
 //page = "login" -> for displaying login page
 //page = "next" -> for switching to next page (NewEvPage)
 //page = "prev" -> for switching to prev page (EvPage)
+//page = "details" -> for displaying a new page with candidate details
 
 var page = "login"; 
 
@@ -9,22 +10,26 @@ var page = "login";
     const appEl = document.getElementById("app");
     const appMg = new PageCreator();
 
-    const isLogged = function () {
+    myApp.isLogged = function () {
         return !!window.dataStorage.get("userData");
     }
 
-    const isOnEv = function () {
+    myApp.isOnEv = function () {
         return true;
     }
 
-    const isOnNewEv = function () {
+    myApp.isOnDetails = function () {
+        return true;
+    }
+
+    myApp.isOnNewEv = function () {
         return true;
     }
 
     const buildPage = function () {
         
         const component = appMg.app({
-            isLogged: isLogged()
+            isLogged: myApp.isLogged()
         });
         appEl.innerHTML = component.view.markup;
         if(component.events!==undefined) {
@@ -35,7 +40,7 @@ var page = "login";
 
         if(page === "next") {
             const switcher = appMg.app({
-                isOnEv: isOnEv()
+                isOnEv: myApp.isOnEv()
             });
             appEl.innerHTML = switcher.view.markup;
             if(switcher.events!==undefined) {
@@ -47,12 +52,21 @@ var page = "login";
 
         if(page === "prev") {
             const switcher = appMg.app({
-                isOnNewEv: isOnNewEv()
+                isOnNewEv: myApp.isOnNewEv()
             });
             appEl.innerHTML = switcher.view.markup;
             if(switcher.events!==undefined) {
                 switcher.events.initEvents(buildPage);
             };  
+        }
+
+        //page = "details" -> for displaying a new page with candidate details
+
+        if(page === "details") {
+            const switcher = appMg.app({
+                isOnDetails: myApp.isOnDetails()
+            });
+            appEl.innerHTML = switcher.view.markup;
         }
     }
     buildPage();

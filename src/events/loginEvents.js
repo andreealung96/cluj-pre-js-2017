@@ -1,4 +1,4 @@
-const LoginEvents = function () {
+myApp.LoginEvents = function () {
     this.initEvents = function(buildPage) {
         
         const loginForm = document.getElementById("loginForm");

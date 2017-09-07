@@ -1,4 +1,4 @@
-const Footer = function () {
+myApp.Footer = function () {
     return `
     <footer class="footer skin-footer">
         Copyright@Softvision2017

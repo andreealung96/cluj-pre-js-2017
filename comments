@@ -1,0 +1,227 @@
+// function Modal(tableData) {
+//     const modalElements = tableData.map(modalObj => Modal(modalObj));
+//     const modalEl = modalElements.join('');
+//     return `
+//     <div id="modal" class="modal">
+//         <span class="close">&times;</span>
+//         ${modalEl}
+//     </div>
+//     `
+// }
+// function evaluationDetailsColumns(modalObj) {
+//     const modal = modalObj.map(el => `
+//     <td class="modal-table-data">${el.evaluation[0].value}</td>
+//     `).join('');
+//     return `
+//     <tr>
+//         ${modal}
+//     </tr>
+//     `
+// }
+// function Modal(modalObj) {
+//     const modal = modalObj.map(el => `
+    
+//              <p>Candidate Info:</p>
+//              <table class="modal-table">
+//                  <tr>
+//                      <td class="modal-table-data">Candidate Name</td>
+//                      <td class="modal-table-data">${el.candidateInfo[0].value}</td>
+//                  </tr>
+//                  <tr>
+//                      <td class="modal-table-data">Interviewer</td>
+//                      <td class="modal-table-data">${el.candidateInfo[1].value}</td>
+//                  </tr>
+//                  <tr>
+//                      <td class="modal-table-data">Interview Date</td>
+//                      <td class="modal-table-data">${el.candidateInfo[2].value}</td>
+//                  </tr>
+//                  <tr>
+//                      <td class="modal-table-data">Should the candidate be hired?</td>
+//                      <td class="modal-table-data">${el.comments[0].value}</td>
+//                  </tr>
+//                  <tr>
+//                      <td class="modal-table-data">General Impression</td>
+//                      <td class="modal-table-data">${el.comments[1].value}</td>
+//                  </tr>
+//                  <tr>
+//                      <td class="modal-table-data">Workflow, Leadership & Softskills</td>
+//                      <td class="modal-table-data">${el.comments[2].value}</td>
+//                  </tr>                
+//              </table>
+//              <p>Candidate Evaluation:</p>
+//              <table class="modal-table">
+//              <tr>
+//                  <td class="modal-table-data">OOP, Design Patterns</td>
+//                  <td class="modal-table-data">${el.evaluation[0].value}</td>
+//                  <td class="modal-table-data">${el.evaluation[1].value}</td>
+//                  <td class="modal-table-data">${el.evaluation[2].value}</td> 
+//                  <td class="modal-table-data">${el.evaluation[3].value}</td>
+//                  <td class="modal-table-data">${el.evaluation[4].value}</td>
+//                  <td class="modal-table-data">${el.evaluation[5].value}</td>
+//              </tr>
+//              <tr>
+//                  <td class="modal-table-data">HTTP</td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//              </tr>
+//              <tr>
+//                  <td class="modal-table-data">HTML</td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//              </tr>
+//              <tr>
+//                  <td class="modal-table-data">CSS</td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//              </tr>
+//              <tr>
+//                  <td class="modal-table-data">Javascript</td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//              </tr>
+//              <tr>
+//                  <td class="modal-table-data">NodeJS</td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//                  <td class="modal-table-data"></td>
+//              </tr>                
+//          </table>
+ 
+ 
+     
+//     ` );
+//     return `
+//      ${modal}
+//      `;
+//  }
+
+// window.onload = function () {
+//     const appEl = document.getElementById('app');
+//     appEl.innerHTML = EvaluationsPage();
+// };
+
+
+
+
+
+
+
+        // const detailsButton = document.getElementsByClassName("details-button");
+        // for(var i=0; i<detailsButton.length; i++) {
+        //     detailsButton[i].addEventListener("click", function() {
+        //         const hidden = document.getElementById("hidden-row");
+        //         hidden[0].style.display = "block";
+        //     });
+        // }
+      
+
+     
+        // detailsButton[1].addEventListener("click", function() {
+        //     const hidden = document.getElementById("hidden-row");
+        //     hidden[1].style.display = "block";
+        // });
+      
+        // detailsButton[2].addEventListener("click", function() {
+        //     const hidden = document.getElementById("hidden-row");
+        //     hidden[2].style.display = "block";
+        // });
+        
+
+
+        // function iterator() {
+        //     var detailsButton = document.getElementsByClassName("details-button");
+        //     var hidden = document.getElementsByClassName("hidden-row");
+        //     j = 0;
+        //     for(var i=0; i<detailsButton.length; i++) {
+                
+        //         detailsButton[i].addEventListener("click", function(event) {
+                    
+        //             hidden[j].style.display = "block";
+        //         });
+        //         j++;
+        //     }
+
+                
+        // };
+        // iterator();
+                     
+           
+               
+            
+        } 
+        };
+
+        
+        
+        
+        // for(var i=0; i<detailsButton.length; i++) {
+        //     detailsButton[i].addEventListener("click", function() {
+        //         const hidden = document.getElementsByClassName("hidden-row");
+        //         hidden[0].style.display = "block";
+        //         // const evData = localStorage.getItem("evaluationsData");
+        //         // const tableData = JSON.parse(evData);
+        //         // detailsTable(tableData, i);
+        //         // function detailsTable(tableData, i) {
+        //         //     // const evData = localStorage.getItem("evaluationsData");
+        //         //     // const tableData = JSON.parse(evData);
+        //         //     const el = tableData.map(function (element) {
+        //         //         return `
+        //         //         <p>${element[i].candidateInfo[0].value}</p>
+        //         //         `
+        //         //     });
+        //         //     alert(el);
+        //         // }
+        //         // function details1(tableData) {
+        //         //     const el = tableData.map(obj => details2(obj, i));
+        //         //     return el.join('');
+        //         // }
+        //         // function details2(obj, i) {
+        //         //     return `
+        //         //     <p>${obj[i].candidateInfo[0].value}</p>
+        //         //     `
+        //         // }
+                
+        //         // const modal = document.getElementById("modal");
+        //         // modal.style.display = "block";
+        //         // const closeButton = document.getElementsByClassName("close");
+        //         // const close = closeButton[0];
+        //         // close.addEventListener("click", function() {
+        //         //     modal.style.display = "none";
+        //         // });
+        // });
+        // };            
+
+        // window.onclick = function(event) {
+        //     const modal = document.getElementById("modal");
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        // }
+    
+
+
+
+// window.onload = function() {
+//     const divEl = document.getElementById("app");
+//     divEl.innerHTML = LoginPage();
+// }
+

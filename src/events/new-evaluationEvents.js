@@ -1,4 +1,4 @@
-const NewEvaluationEvents = function () {
+myApp.NewEvaluationEvents = function () {
     this.initEvents = function(buildPage) {
         
         const currentPageButton = document.getElementById("newEvaluationPage");
