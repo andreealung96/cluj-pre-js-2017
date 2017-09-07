@@ -1,9 +1,11 @@
 function EvaluationsPage(options = {}) { 
     const evaluationsTableData = getEvaluationsTableData();
+    const evData = localStorage.getItem("evaluationsData");
+    const tableData = JSON.parse(evData);
     this.markup = `
     ${NAVEvaluations()}
-    ${EvaluationsTable(evaluationsTableData)}
-    ${Modal()}
+    ${EvaluationsTable(evaluationsTableData, tableData)}
+    ${Modal(tableData)}
     ${Footer()}
     `;
 }
@@ -19,12 +21,12 @@ function NAVEvaluations(options = {}) {
     `
 }
 
-function EvaluationsTable(options = {}) {
+function EvaluationsTable(options = {}, tableData) {
     return `
     <section>
         <table class="candidates-table skin-candidates-table">
             ${EvaluationsTableHeader(options)}
-            ${EvaluationsTableBody(options)}
+            ${EvaluationsTableBody(tableData)}
         </table>
     </section>
     `;
@@ -39,8 +41,8 @@ function EvaluationsTableHeader(options = {}) {
     `;
 }
 
-function EvaluationsTableBody(options = {}) {
-    const rowsElements = options.items.map(rowObj => EvaluationsTableRow(rowObj));
+function EvaluationsTableBody(tableData) {
+    const rowsElements = tableData.map(rowObj => EvaluationsTableRow(rowObj));
     const rowsEl = rowsElements.join('');
     return `
     <tbody>    
@@ -49,24 +51,48 @@ function EvaluationsTableBody(options = {}) {
     `;
 }
 
-function EvaluationsTableRow(options = {}) {
+function EvaluationsTableRow(rowObj) {
     return `
     <tr class="rows skin-rows">
-        <td>${options.name}</td>
-        <td>${options.technology}</td>
-        <td>${options.level}</td>
+        <td>${rowObj.candidateInfo[0].value}</td>
+        <td>Javascript</td>
+        <td>${rowObj.techLevel[0].value}</td>
         <td class="details">Detalii <button id="details" class="details-button skin-details-button">+</button></td>
     </tr>
     `;
 }
 
-function Modal() {
+function Modal(tableData) {
     return `
     <div id="modal" class="modal">
-        <div class="modal-content>
             <span class="close">&times;</span>
-            <p>Detalii aisdfjoaifjqaeigeig</p>
-        </div>
+            <p>Candidate Info:</p>
+            <table class="modal-table">
+                <tr>
+                    <td class="modal-table-data">Candidate Name</td>
+                    <td class="modal-table-data"></td>
+                </tr>
+                <tr>
+                    <td class="modal-table-data">Interviewer</td>
+                    <td class="modal-table-data"></td>
+                </tr>
+                <tr>
+                    <td class="modal-table-data">Interview Date</td>
+                    <td class="modal-table-data"></td>
+                </tr>
+                <tr>
+                    <td class="modal-table-data">Should the candidate be hired?</td>
+                    <td class="modal-table-data"></td>
+                </tr>
+                <tr>
+                    <td class="modal-table-data">General Impression</td>
+                    <td class="modal-table-data"></td>
+                </tr>
+                <tr>
+                    <td class="modal-table-data">Workflow, Leadership & Softskills</td>
+                    <td class="modal-table-data"></td>
+                </tr>                
+            </table>
     </div>
     `
 }
