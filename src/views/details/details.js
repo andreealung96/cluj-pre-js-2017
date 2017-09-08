@@ -49,46 +49,46 @@ myApp.DetailsTable = function(tableData) {
              </tr>
              <tr>
                  <td class="modal-table-data">HTTP</td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
+                 <td class="modal-table-data">${tableData[0].evaluation[6].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[7].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[8].value}</td> 
+                 <td class="modal-table-data">${tableData[0].evaluation[9].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[10].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[11].value}</td>
              </tr>
              <tr>
                  <td class="modal-table-data">HTML</td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
+                 <td class="modal-table-data">${tableData[0].evaluation[12].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[13].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[14].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[15].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[16].value}</td>
                  <td class="modal-table-data"></td>
              </tr>
              <tr>
                  <td class="modal-table-data">CSS</td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
+                 <td class="modal-table-data">${tableData[0].evaluation[17].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[18].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[19].value}</td> 
+                 <td class="modal-table-data">${tableData[0].evaluation[20].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[21].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[22].value}</td>
              </tr>
              <tr>
                  <td class="modal-table-data">Javascript</td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
+                 <td class="modal-table-data">${tableData[0].evaluation[23].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[24].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[25].value}</td> 
+                 <td class="modal-table-data">${tableData[0].evaluation[26].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[27].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[28].value}</td>
              </tr>
              <tr>
                  <td class="modal-table-data">NodeJS</td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
-                 <td class="modal-table-data"></td>
+                 <td class="modal-table-data">${tableData[0].evaluation[29].value}</td> 
+                 <td class="modal-table-data">${tableData[0].evaluation[30].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[31].value}</td>
+                 <td class="modal-table-data">${tableData[0].evaluation[32].value}</td>
                  <td class="modal-table-data"></td>
                  <td class="modal-table-data"></td>
              </tr>                

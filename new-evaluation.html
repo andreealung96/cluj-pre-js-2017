@@ -6,29 +6,29 @@
         <link rel="stylesheet/less" type="text/css" href="assets/css/new-evaluation.less">
         <script src="less.js" type="text/javascript"></script>
 	</head>
-	<body class="skin_body">
-		<header class="header">
-			<img class="logo" src="assets/logo-v2.png">
-			<a class="menu_button" href="evaluations.html">Evaluations</a>
-			<a class="menu_button current_menu_button" href="new-evaluation.html">New Evaluation</a>
-			<a class="menu_button" href="login.html" style="float: right">Logout</a>
+	<body class="skin-body">
+		<header class="header skin-header">
+			<img class="logo" src="assets/logo-v2.png" alt="The image cannot be displayed">
+			<a class="menu-button" href="evaluations.html">Evaluations</a>
+			<a class="menu-button current-menu-button skin-current-menu-button" href="new-evaluation.html">New Evaluation</a>
+			<a class="menu-button" href="login.html" style="float: right">Logout</a>			
 		</header>
-			<div class="evaluation_form">
+			<div class="evaluation-form">
 				<form method="post" action="action.php">
 					<div>
-						<input class="evaluation_form_header" type="text"  name="Candidate" placeholder="Candidate">
-						<input class="evaluation_form_header" type="text" name="Interviewer" placeholder="Interviewer">
-						<input class="evaluation_form_header" type="date" name="Date" value="04/22/2012">
+						<input class="evaluation-form-header skin-evaluation-form-header" type="text"  name="Candidate" placeholder="Candidate">
+						<input class="evaluation-form-header skin-evaluation-form-header" type="text" name="Interviewer" placeholder="Interviewer">
+						<input class="evaluation-form-header skin-evaluation-form-header" type="date" name="Date" value="04/22/2012">
 					</div>
-					<h2 class="evaluation_category">Technical level</h2>
-					<table class="evaluation_form_table">
-						<tr class="evaluation_form_table_header skin_evaluation_form_table_header">
+					<h2 class="evaluation-category">Technical level</h2>
+					<table class="evaluation-form-table skin-evaluation-form-table">
+						<tr class="evaluation-form-table-header skin-evaluation-form-table-header">
 				            <th>Trainee</th>
 				            <th>Junior</th>
 				            <th>Middle</th>
 				            <th>Senior</th>
         				</tr>
-        				<tr class="evaluation_form_table_content">
+        				<tr class="evaluation-form-table-content skin-evaluation-form-table-content">
             				<td>
 				            	<input type="radio" name="level" value="Trainee"></td>
 				            <td>
@@ -48,14 +48,14 @@
             				</td>
         				</tr>
 					</table>
-					<h2 class="evaluation_category">Should the candidate be hired?</h2>
-					<textarea class="evaluation_comments" rows="5" cols="132" placeholder="The type of project that is suitable for the candidate&#13;&#10;Is guidance required for the candidate"></textarea>
-					<h2 class="evaluation_category">General Impression</h2>
-					<textarea class="evaluation_comments" rows="5" cols="132" placeholder="*required" required></textarea>
-					<h2 class="evaluation_category">Workflow, Leadership &amp; Softskills</h2>
-					<textarea class="evaluation_comments" rows="5" cols="132" placeholder="Describe the environment in which the candidate works.&#13;&#10;Describe any guidance or management experience."></textarea>
-					<fieldset class="evaluation_options">
-						<legend class="evaluation_category">OOP, Design Patterns</legend>
+					<h2 class="evaluation-category">Should the candidate be hired?</h2>
+					<textarea class="evaluation-comments" rows="5" cols="132" placeholder="The type of project that is suitable for the candidate&#13;&#10;Is guidance required for the candidate"></textarea>
+					<h2 class="evaluation-category">General Impression</h2>
+					<textarea class="evaluation-comments" rows="5" cols="132" placeholder="*required" required></textarea>
+					<h2 class="evaluation-category">Workflow, Leadership &amp; Softskills</h2>
+					<textarea class="evaluation-comments" rows="5" cols="132" placeholder="Describe the environment in which the candidate works.&#13;&#10;Describe any guidance or management experience."></textarea>
+					<fieldset class="evaluation-options skin-evaluation-options">
+						<legend class="evaluation-category">OOP, Design Patterns</legend>
 						<ul>
 							<li>Classes</li>
 							<li>
@@ -143,8 +143,8 @@
 							</li>
 						</ul>
 					</fieldset>
-					<fieldset class="evaluation_options">
-						<legend class="evaluation_category">HTTP</legend>
+					<fieldset class="evaluation-options skin-evaluation-options">
+						<legend class="evaluation-category">HTTP</legend>
 						<ul>
 							<li>Protocol</li>
 							<li>
@@ -210,8 +210,8 @@
 							</li>
 						</ul>
 					</fieldset>
-					<fieldset class="evaluation_options">
-						<legend class="evaluation_category">HTML</legend>
+					<fieldset class="evaluation-options skin-evaluation-options">
+						<legend class="evaluation-category">HTML</legend>
 						<ul>
 							<li>Doctype</li>
 							<li>
@@ -267,8 +267,8 @@
 							</li>
 						</ul>
 					</fieldset>
-					<fieldset class="evaluation_options">
-						<legend class="evaluation_category">CSS</legend>
+					<fieldset class="evaluation-options skin-evaluation-options">
+						<legend class="evaluation-category">CSS</legend>
 						<ul>
 							<li>Usage</li>
 							<li>
@@ -334,8 +334,8 @@
 							</li>
 						</ul>
 					</fieldset>
-					<fieldset class="evaluation_options">
-						<legend class="evaluation_category">Javascript</legend>
+					<fieldset class="evaluation-options skin-evaluation-options">
+						<legend class="evaluation-category">Javascript</legend>
 						<ul>
 							<li>Data types &amp; variables</li>
 							<li>
@@ -509,8 +509,8 @@
 						</li>
 						</ul>
 					</fieldset>
-					<fieldset class="evaluation_options">
-						<legend class="evaluation_category">NodeJS</legend>
+					<fieldset class="evaluation-options skin-evaluation-options">
+						<legend class="evaluation-category">NodeJS</legend>
 						<ul>
 						<li>Backend frameworks</li>
 						<li>
@@ -556,10 +556,10 @@
 						</li>
 						</ul>
 					</fieldset>
-					<button class="evaluation_form_submit skin_evaluation_form_submit" type="submit">Submit</button>
+					<button class="evaluation-form-submit skin-evaluation-form-submit" type="submit">Submit</button>
 					<div style="clear: both"></div>
 				</form>
 			</div>
-		<footer class="footer skin_footer">Copyright@Softvision 2017</footer>
+		<footer class="footer skin-footer">Copyright@Softvision 2017</footer>
 	</body>
 </html>

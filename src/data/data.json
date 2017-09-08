@@ -1,35 +1,4 @@
 {
-    "evaluationsTableData": 
-    {
-        "itemHeadings":
-        [
-            "Nume", "Tehnologie", "Nivel",""
-        ],
-        "items":
-        [
-            {
-                "name": "Popescu Adrian",
-                "technology": "Javascript",
-                "level": "Mid 2"
-            },
-            {
-                "name": "Dragan Roxana",
-                "technology": "PHP",
-                "level": "Mid 1"
-            },
-            {
-                "name": "Florescu Mihai",
-                "technology": "Javascript",
-                "level": "Junior 3"
-            },
-            {
-                "name": "Gheorghe Andrei",
-                "technology": "Ruby",
-                "level": "Senior 1"
-            }
-        ]
-    },
-
     "technicalLevel": {
         "title": "Technical level",
         "headers": [

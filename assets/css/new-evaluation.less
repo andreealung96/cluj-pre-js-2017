@@ -3,15 +3,18 @@ body {
     margin: auto;				
 }
 
-.skin_body {
+.skin-body {
     background-color: #f7f7f7;
     font-family: Arial;
 }
 
 .header {
-    height: 70px;
-    border-bottom: 1px solid grey;
+    height: 70px;   
     font-size: 25px;
+}
+
+.skin-header {
+    border-bottom: 1px solid grey;
 }
         
 .footer {
@@ -39,16 +42,19 @@ body {
     vertical-align: middle;
 }
 
-.menu_button {
+.menu-button {
     vertical-align: middle;
     line-height: 70px;
     margin-left: 100px;
     margin-right: 15px;
 }
 
-.current_menu_button {
-    border-bottom: 9px solid #21bcff; 
+.current-menu-button {    
     padding-bottom: 12px;
+}
+
+.skin-current-menu-button {
+    border-bottom: 9px solid #21bcff; 
 }
 
 a:link, a:visited {
@@ -56,46 +62,55 @@ a:link, a:visited {
     color: black;
 }
 
-.evaluation_form {
+.evaluation-form {
     padding-top: 55px;
     margin: 0 auto ;
     width: 1000px;
     height: 100%;
 }
 
-.evaluation_form_header {
-    border: none;
-    border-bottom: 3px solid #f7f7f7;
+.evaluation-form-header {
     height: 30px;
     width: 300px;
     margin: 7px;
 }
 
-.evaluation_form_table {
-    border-collapse: collapse;
+.skin-evaluation-form-header {
+    border: none;
+    border-bottom: 3px solid #f7f7f7;
+}
+
+.evaluation-form-table {  
     width: 1000px;
     margin: 21px 0px;
     text-align: center;
 }
 
-.evaluation_form_table_header {
+.skin-evaluation-form-table {
+    border-collapse: collapse;
+}
+
+.evaluation-form-table-header {
     height: 40px;
     width: 935px;
 }
 
-.skin_evaluation_form_table_header {
+.skin-evaluation-form-table-header {
     background-color: #21bcff;
     color: white;
     font-size: 14px;
 }
 
-.evaluation_form_table_content {
-    border: 1px solid black;
+.evaluation-form-table-content { 
     height: 40px;
     width: 934px;
 }
 
-.evaluation_form_submit {
+.skin-evaluation-form-table-content {
+    border: 1px solid black;
+}
+
+.evaluation-form-submit {
     float: right;
     width: 150px;
     height: 50px;    
@@ -104,7 +119,7 @@ a:link, a:visited {
     margin-top: 10px;
 }
 
-.skin_evaluation_form_submit {
+.skin-evaluation-form-submit {
     background-color: #21bcff;
     color: white;
     font-size: 20px;
@@ -114,11 +129,10 @@ a:link, a:visited {
 }
 
 @media only screen and (max-device-width: 480px) {
-      .evaluation_form_submit {text-transform: uppercase; }
+      .evaluation-form-submit {text-transform: uppercase; }
 }
 
-
-.evaluation_category {
+.evaluation-category {
     font-size: 25px;
     color: #21bcff;
 }
@@ -127,15 +141,18 @@ legend {
       margin: 10px 20px;      
 }
 
-.evaluation_comments {
+.evaluation-comments {
     margin: 20.750px 0px;
     width: 994px;
 }
 
-.evaluation_options {
+.evaluation-options {
     width: 996px;
     padding: 1px;
-    margin: 30px 0px;
+    margin: 30px 0px;    
+}
+
+.skin-evaluation-options {
     border-width: 1px;
 }
 

@@ -1,3 +1,12 @@
+function getEvaluationsTableData() {
+    return {
+        itemHeadings:
+        [
+            'Nume', 'Tehnologie', 'Nivel',''
+        ]
+    }
+}
+
 (function () {
     myApp.EvaluationsPage = function (options = {}) { 
         const evaluationsTableData = getEvaluationsTableData();
