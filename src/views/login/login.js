@@ -1,22 +1,22 @@
-function LoginPage () {
+myApp.LoginPage = function () {
     this.markup = `
-    ${LoginHeader()}
-    ${SubmitFeedbackSection()}
-    ${SubmitFeedbackResults()}
-    ${Footer()}
+    ${myApp.LoginHeader()}
+    ${myApp.SubmitFeedbackSection()}
+    ${myApp.SubmitFeedbackResults()}
+    ${myApp.Footer()}
     `;
 }
 
-const LoginHeader = function () {
+myApp.LoginHeader = function () {
     return `
     <header>
     <img class="banner" src="assets/feedback-banner.jpg">
-        ${LoginForm()}
+        ${myApp.LoginForm()}
     </header>
     `;
 }
 
-const LoginForm = function () {
+myApp.LoginForm = function () {
     return `
     <div class="login skin-login rounded-border">
         <div class="login-header skin-login-header rounded-border text-center">Interview Feedback</div>
@@ -29,7 +29,7 @@ const LoginForm = function () {
     `;
 }
 
-const SubmitFeedbackSection = function () {
+myApp.SubmitFeedbackSection = function () {
     return `
     <section class="section1">
         <img class="img-section1" src="assets/new feedback.jpg">
@@ -48,7 +48,7 @@ const SubmitFeedbackSection = function () {
     `;
 };
 
-const SubmitFeedbackResults = function () {
+myApp.SubmitFeedbackResults = function () {
     return `
     <section class="section2 skin-section2">
         <img class="img-section2" src="assets/results.jpg">
@@ -66,11 +66,6 @@ const SubmitFeedbackResults = function () {
     </section>   
     `;
 };
-
-// window.onload = function() {
-//     const divEl = document.getElementById("app");
-//     divEl.innerHTML = LoginPage();
-// }
 
 
 

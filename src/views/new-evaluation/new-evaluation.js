@@ -1,16 +1,23 @@
-// var xhr = new XMLHttpRequest();
-// xhr.open("GET","../../src/data/data.js", true);
-// xhr.onload = function () {
-//     if(this.status == 200) {
-        function NewEvaluationPage(options = {}) {
+var xhr = new XMLHttpRequest();
+var url = "../../src/data/data.json";
+xhr.onreadystatechange = function () {
+    if(this.readyState == 4 && this.status <400) {
+        var data = JSON.parse(this.responseText);
+        myApp.NewEvaluationPage(data);
+    }
+};
+xhr.open("GET", url);
+xhr.send();
+        
+        myApp.NewEvaluationPage = function(data) {
             this.markup = `
-            ${NAVNewEvaluation()}
-            ${NewEvaluationForm()} 
-            ${Footer()} 
+            ${myApp.NAVNewEvaluation()}
+            ${myApp.NewEvaluationForm()} 
+            ${myApp.Footer()} 
             `;
         }
         
-        function NAVNewEvaluation(options = {}) {
+        myApp.NAVNewEvaluation = function(data) {
             return `
             <header class="header skin-header">
                 <img class="logo" src="assets/logo-v2.png">
@@ -19,27 +26,27 @@
                 <a id="logout" class="menu-button" style="float: right">Logout</a>
             </header>
             `;
-        }
+        } 
         
-        function NewEvaluationForm(options = {}) {
-            const technical = getTechnicalLevel();
-            const textarea = getTextarea();
-            const fieldset = getFieldset();
+        myApp.NewEvaluationForm = function (data) {
+            const technical = data.technicalLevel;
+            const textarea = data.textarea;
+            const fieldset = data.fieldset;
             return `
             <div class="evaluation-form">
             <form id="newEvaluationForm" method="post" action="">
-                ${CandidateDetailsForm()}
-                ${TechnicalLevelPicker(technical)}
-                ${Textarea(textarea)}
-                ${Fieldset(fieldset)}
-                ${SubmitButton()}
+                ${myApp.CandidateDetailsForm()}
+                ${myApp.TechnicalLevelPicker(technical)}
+                ${myApp.Textarea(textarea)}
+                ${myApp.Fieldset(fieldset)}
+                ${myApp.SubmitButton()}
                 <div style="clear: both"></div> 
             </form>
             </div>
             `;
         }
         
-        function CandidateDetailsForm(options = {}) {
+        myApp.CandidateDetailsForm = function(data) {
             return `
             <div>
                 <input class="evaluation-form-header skin-evaluation-form-header" type="text" name="Candidate" placeholder="Candidate">
@@ -49,7 +56,7 @@
             `;
         }
         
-        function TechnicalLevelPicker(options = {}) {
+        myApp.TechnicalLevelPicker = function(data) {
             const tableHeader = options.headers.map(el => `<th>${el}</th>`);
             const headersEl = tableHeader.join('');
             const tableData = options.columnData.map((el) => {
@@ -69,7 +76,7 @@
             `;
         }
         
-        function Textarea(options = {}) {
+        myApp.Textarea = function(data) {
             const textareaEl = options.textarea.map(el => `
                 <h2 class="evaluation-category">${el.label}</h2>
                 <textarea class="evaluation-comments"  name="textarea" rows="5" cols="132" placeholder="${el.placeholder}"></textarea>
@@ -81,13 +88,13 @@
             `;
         }
         
-        function Fieldset(options = {}) {
+        myApp.Fieldset = function(data) {
             const fieldset = getFieldset();
             const fieldsetEl = options.fieldset.map(el => `
                 <fieldset class="evaluation-options skin-evaluation-options">
                     <legend class="evaluation-category">${el.legend}</legend>
-                    ${FieldsetRow(el.ul[0])} 
-                    ${FieldsetRow(el.ul[1])}                               
+                    ${myApp.FieldsetRow(el.ul[0])} 
+                    ${myApp.FieldsetRow(el.ul[1])}                               
                 </fieldset>
                 `).join('');
             return `
@@ -97,7 +104,7 @@
             `;
         }
         
-        function FieldsetRow(options = {}) {
+        myApp.FieldsetRow = function(data) {
             const row = options.row.map(el => {
                 const optionsHTML = el.options.map( option => 
                     `<option>${option}</option>`).join('');
@@ -115,15 +122,9 @@
         }
         
         
-        function SubmitButton(options = {}) {
+        myApp.SubmitButton = function(data) {
             return `
             <button id="submit" class="evaluation-form-submit skin-evaluation-form-submit" type="submit">Submit</button>
             `
         }
         
-//     } else {
-//         console.log("Error");
-//     }
-// }
-// xhr.send();
-
