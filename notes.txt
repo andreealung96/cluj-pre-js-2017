@@ -1,0 +1,26 @@
+(function () {
+    var rootElem = document.getElementById("app");
+    var isLogged = false;
+    function getLoggedIn() {
+        var user = JSON.parse.localStorage.get("loggedUser);
+        return !!user; //converteste user in boolean (daca contine date true , daca nu, false)
+    }
+    isLogged = getLoggedIn();
+    var component = generateView(isLogged);
+    rootElem.innerHTML = component.view;
+    component.initEvents();
+})();
+
+!!index.js in body dupa div
+
+var generateView = function (options) {
+    if(options.isLogged)
+        return {
+            view: new Login();
+            initLoginEvents: function-reference
+        }
+    return {
+        view: new EvalList();
+        initEvent: function-reference
+    }   
+}

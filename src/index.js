@@ -6,6 +6,7 @@
 var page = "login"; 
 
 (function () {
+    
     window.dataStorage = new LocalStorageWrapper();
     const appEl = document.getElementById("app");
     const appMg = new PageCreator();
